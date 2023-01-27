@@ -1,0 +1,19 @@
+name: coding challenge test
+
+on: [push]
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout and Setup
+        uses: actions/checkout@v3
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: |
+          python -m pipenv install
+      - name: Test with pytest
+        run: | 
+          pipenv install pytest
+          pytest tests/
