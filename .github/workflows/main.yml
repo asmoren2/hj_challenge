@@ -17,6 +17,7 @@ jobs:
         run: |
           pip install pipenv
           pipenv install
+          pipenv sync --dev
       - name: Test with pytest
         run: | 
           pipenv install pytest
