@@ -1,6 +1,10 @@
 name: coding challenge test
 
-on: [push]
+on: 
+  push:
+    branches: 
+      - '*'
+      - '!master'      
 jobs:
   build:
 
