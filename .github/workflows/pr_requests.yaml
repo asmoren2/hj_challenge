@@ -1,4 +1,4 @@
-name: PR Tasks
+name: Setup and Unit Tests
 
 on: ['pull_request']
 
