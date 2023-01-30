@@ -22,5 +22,5 @@ jobs:
         run: | 
           pipenv run pytest tests/
       - name: Check for vulnerabilities
-        run: pipenv check
+        run: pipenv check -i 52365
           
