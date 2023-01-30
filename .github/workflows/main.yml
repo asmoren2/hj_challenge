@@ -22,3 +22,5 @@ jobs:
         run: | 
           pipenv install pytest
           pipenv run pytest tests/
+      - name: Check for vulnerabilities
+        run: pipenv check
