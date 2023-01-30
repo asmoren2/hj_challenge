@@ -6,4 +6,4 @@ on:
       - 'main'      
 jobs:
   test:
-    uses: hj_challenge/.github/workflows/pr_request.yml@main
+    uses: asmoren2/hj_challenge/.github/workflows/pr_request.yml@main
