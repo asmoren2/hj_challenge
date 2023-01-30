@@ -1,0 +1,24 @@
+name: PR Tasks
+
+on: ['pull_request']
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Checkout Code and Python setup
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: |
+          pip install pipenv
+          pipenv sync --dev
+          pipenv install pytest
+      - name: Run Unit Tests
+        run: | 
+          pipenv run pytest tests/
+      - name: Check for vulnerabilities
+        run: pipenv check
+          
