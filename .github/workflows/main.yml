@@ -3,28 +3,7 @@ name: coding challenge test
 on: 
   push:
     branches: 
-      - '*'
-      - '!main'      
+      - 'main'      
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Checkout and Setup
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
-      - name: check python version
-        run: python --version
-      - name: Install dependencies
-        run: |
-          pip install pipenv
-          pipenv install
-          pipenv sync --dev
-      - name: Test with pytest
-        run: | 
-          pipenv install pytest
-          pipenv run pytest tests/
-      - name: Check for vulnerabilities
-        run: pipenv check
+  test:
+    uses: hj_challenge/.github/workflows/pr_request.yml@main
