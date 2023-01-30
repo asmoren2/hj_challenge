@@ -1,9 +1,9 @@
-name: coding challenge test
+name: Merge Main
 
 on: 
   push:
-    branches: 
-      - 'main'      
+    branches:
+      - 'main'
 jobs:
   test:
-    uses: hj_challenge/.github/workflows/pr_request.yml@main
+    uses: asmoren2/hj_challenge/.github/workflows/pr_requests.yml@main
